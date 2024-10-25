@@ -34,12 +34,12 @@ After the client library is installed/deployed, you can use it in your Maven pro
 ## Creación del cliente
 
 
-Descargar https://nexus.focaltec.com/repository/maven-releases/io/swagger/codegen/v3/swagger-codegen-cli/3.0.58-edited/swagger-codegen-cli-3.0.58-edited.jar
+Descargar el jar [swagger-codegen-cli-3.0.58-edited-SNAPSHOT.jar](https://drive.google.com/file/d/1nHiam572BmdCTOuhuPP4hMckrSyC7e8G/view?usp=share_link)
 
 Ejecutar:
 
 ```
-java -jar swagger-codegen-cli-3.0.58-edited.jar generate -l java -o ~/Downloads/pdp-integration-api-client -i https://api-dev.portaldeproveedores.mx/v3/api-docs/integration-api --api-package com.focaltec.pdp.api --model-package com.focaltec.pdp.api.model --invoker-package com.focaltec.pdp.api.invoker --group-id com.focaltec.pdp --artifact-id pdp-integration-api-client --artifact-version 1.0.1 --library feign -DdateLibrary=joda -Djava11=true -DnotNullJacksonAnnotation=true -DhideGenerationTimestamp=true 
+java -jar swagger-codegen-cli-3.0.58-edited-SNAPSHOT.jar generate -l java -o ~/Downloads/pdp-integration-api-client -i https://api-dev.portaldeproveedores.mx/v3/api-docs/integration-api --api-package com.focaltec.pdp.api --model-package com.focaltec.pdp.api.model --invoker-package com.focaltec.pdp.api.invoker --group-id com.focaltec.pdp --artifact-id pdp-integration-api-client --artifact-version 1.0.1 --library feign -DdateLibrary=joda -Djava11=true -DnotNullJacksonAnnotation=true -DhideGenerationTimestamp=true 
 
 ```
 Reemplazar la carpeta pdp-integration-api-client dentro del repositorio local por ~/Downloads/pdp-integration-api-client para actualizar los archivos del cliente generado.
@@ -54,7 +54,7 @@ Formatear clases (Seleccionar proyecto --> click derecho --> Source --> Format)
 
 Code cleanup (Seleccionar proyecto --> click derecho --> Source --> Clean Up --> Finish)
 
-Revisar si hay errores de compilación y corregirlos en caso de haber. Por ahora se tiene identificada la clase com.focaltec.pdp.api.model.SpecificReceptionRuleType que hay que cambiar el parámetro final List<InnerEnum> paymentsItem por final List<String> paymentsItem y la asignación del mapa this.payments = new HashMap<String, InnerEnum<String>>(); por this.payments = new HashMap<>();
+Revisar si hay errores de compilación y corregirlos en caso de haber. Por ahora se tiene identificada la clase `com.focaltec.pdp.api.model.SpecificReceptionRuleType` que hay que cambiar el parámetro `final List<InnerEnum> paymentsItem` por `final List<String> paymentsItem` y la asignación del mapa `this.payments = new HashMap<String, InnerEnum<String>>();` por `this.payments = new HashMap<>();`
 
 Revisar que no hayan cambios sustanciales en ningun archivo mas que los esperados en el sourcetree... hay que tener cuidado que no se muevan de posición los parámetros de los métodos de las apis.
 
