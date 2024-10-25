@@ -87,9 +87,6 @@ public interface {{classname}} extends ApiClient.Api {
   {{#vendorExtensions.x-contentType}}
       "Content-Type: {{{vendorExtensions.x-contentType}}}", //
   {{/vendorExtensions.x-contentType}}
-  {{^vendorExtensions.x-contentType}}
-      "Content-Type: */*", //
-  {{/vendorExtensions.x-contentType}}
   {{#vendorExtensions.x-accepts}}
       "Accept: {{{vendorExtensions.x-accepts}}}", //
   {{/vendorExtensions.x-accepts}}
